@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Digidex</title>
+    <link rel="stylesheet" href="main.css"><!--Buscar CSS-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Biblioteca VUE-->
+</head>
+<body>
+<div id="app" v-cloak>
+    <div class="search-bar">
+        <input type="text" v-model="searchText" placeholder="Procurar Digimon"><!--Barra de pesquisa-->
+    </div>
+    <div class="digimon-container"><!--Conteiner inteiro dos digimons-->
+        <ul>
+            <li v-for="digimon in sortedAndFilteredDigimons" :key="digimon.name" :class="['digimon-card', getTypeClass(digimon.level)]" @click="toggleDetails(digimon)">
+                <div class="digimon-card"><!--Card dos digimons-->
+                    <img :src="digimon.img" alt="digimon-image"><!--Imagem de cada digimon-->
+                    <p class="digimon-name">{{ capitalizeFirstLetter(digimon.name) }}</p>
+                    <div v-if="digimon.showDetails" class="details">
+                        <p>Level: {{ capitalizeFirstLetter(digimon.level) }}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div v-if="loading" class="loading-message">Loading...</div><!--Mensagem de Loading caso erro-->
+</div>
+
+<script src="app.js"></script><!--Buscar JS-->
+</body>
+</html>

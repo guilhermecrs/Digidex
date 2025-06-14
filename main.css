@@ -1,0 +1,100 @@
+body {/*Toda estrutura atrás dos cards*/
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #cdf1f8;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.search-bar {/*Dentro da barra de pesquisa*/
+    text-align: center;
+    margin: 20px 0;
+
+}
+
+.search-bar input {/*Fora da barra de pesquisa*/
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.digimon-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards por linha */
+    gap: 20px;
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: contents;
+}
+
+li {
+    cursor: pointer;
+}
+
+.digimon-card {     
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    transition: all 0.3s ease; /* Adiciona transição suave */
+    border-radius: 10px;
+}
+
+.digimon-card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+}
+
+.digimon-card img {
+    max-width: 100%;
+    border-radius: 10px; /* Adiciona bordas arredondadas às imagens */
+
+}
+
+.digimon-name {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.details {
+    margin-top: 10px;
+}
+
+.loading-message {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px;
+}
+
+/* Estilização baseada no nível */
+.fresh {
+    background-color: #73A187;
+}
+.in-training {
+    background-color: #73A187;
+}
+.training {
+    background-color: #73A187;
+}
+.rookie {
+    background-color: #478186;
+}
+.champion {
+    background-color: #335E61;
+}
+.ultimate {
+    background-color: #2a6f7d;
+}
+.mega {
+    background-color: #2B5057;
+}
+.armor {
+    background-color: #224046;
+}
